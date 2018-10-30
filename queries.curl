@@ -1,0 +1,5 @@
+curl -i -XPOST http://localhost:8096/query --data-urlencode "q=CREATE DATABASE domoticz"
+curl -i -XPOST 'http://localhost:8096/write?db=domoticz' --data-binary 'cpu,host=serverA value=0.84'
+curl -G 'http://localhost:8096/query?pretty=true' --data-urlencode "db=domoticz" --data-urlencode "q=SHOW DATABASES"
+curl -G 'http://localhost:8096/query?pretty=true' --data-urlencode "db=domoticz" --data-urlencode "q=SHOW MEASUREMENTS"
+curl -G 'http://localhost:8096/query?pretty=true' --data-urlencode "db=domoticz" --data-urlencode "q=SELECT * FROM Temperature"
